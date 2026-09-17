@@ -345,14 +345,13 @@
   }
 
   .team-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-32) var(--space-20);
+    gap: var(--space-32);
   }
 }
 
 @media (max-width: 768px) {
   .team-section {
-    padding: 100px 0 72px 0;
+    padding: 90px 0 72px 0;
   }
 
   .team-header {
@@ -365,34 +364,27 @@
 
   .team-grid {
     display: flex;
-    overflow-x: auto;
-    overflow-y: visible;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    gap: var(--space-16);
-    padding-top: 36px;
-    padding-bottom: 20px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .team-grid::-webkit-scrollbar {
-    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-48);
+    width: 100%;
+    padding-top: 16px;
+    padding-bottom: 10px;
+    overflow: visible;
   }
 
   .team-card {
-    flex: 0 0 72%;
-    min-width: 220px;
-    max-width: 280px;
-    scroll-snap-align: center;
+    flex: none;
+    width: 100%;
+    max-width: 290px;
   }
 
   .team-card__visual {
-    height: 350px;
+    height: 380px;
     max-height: none;
   }
 
   .team-mobile-controls {
-    display: flex;
+    display: none !important;
   }
 }
