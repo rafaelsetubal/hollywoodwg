@@ -1,0 +1,455 @@
+/* ==================================================
+   HOLLYWOOD WG BARBEARIA — FOOTER / RODAPÉ EDITORIAL
+   ================================================== */
+
+.site-footer {
+  position: relative;
+  background-color: var(--black);
+  color: #8A8A8A;
+  padding: 120px 0 56px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.site-footer__container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--grid-padding);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==================================================
+   ROW 1: 3-COLUMN ARCHITECTURAL GRID
+   ================================================== */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr 1.15fr;
+  gap: 64px;
+  padding-bottom: 80px;
+  align-items: start;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Column Header */
+.footer-col__title {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 28px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-col__title::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: var(--gold);
+}
+
+/* --------------------------------------------------
+   COLUMN 1: BRAND ANCHOR (IMPACTFUL LOGO)
+   -------------------------------------------------- */
+.footer-col--brand {
+  padding-right: 32px;
+}
+
+.footer-brand {
+  display: inline-block;
+  text-decoration: none;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.footer-brand:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.footer-brand__logo {
+  height: 96px;
+  width: auto;
+  max-width: 240px;
+  object-fit: contain;
+  display: block;
+}
+
+.footer-brand__tagline {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-brand__name {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #E0E0E0;
+}
+
+.footer-brand__sub {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* --------------------------------------------------
+   COLUMN 2: SITEMAP / NAVEGAÇÃO
+   -------------------------------------------------- */
+.footer-nav__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-nav__link {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #A8A8A8;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.footer-nav__link::before {
+  content: '—';
+  color: rgba(212, 175, 55, 0.45);
+  font-size: 0.8125rem;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.footer-nav__link:hover {
+  color: var(--gold-light);
+  transform: translateX(5px);
+}
+
+.footer-nav__link:hover::before {
+  color: var(--gold);
+}
+
+/* --------------------------------------------------
+   COLUMN 3: CONNECT & CONVERT (CONECTE-SE)
+   -------------------------------------------------- */
+.footer-connect__socials {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.footer-connect__link {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #F5F5F5;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.footer-connect__icon {
+  width: 20px;
+  height: 20px;
+  stroke: var(--gold);
+  flex-shrink: 0;
+  transition: stroke var(--transition-fast), transform var(--transition-fast);
+}
+
+.footer-connect__link:hover {
+  color: var(--gold);
+  transform: translateX(4px);
+}
+
+.footer-connect__link:hover .footer-connect__icon {
+  stroke: var(--gold-light);
+  transform: scale(1.12);
+}
+
+/* Compact Booking Callout */
+.footer-booking-callout {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.footer-booking-callout__title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #9A9A9A;
+}
+
+.footer-booking-callout__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #050505;
+  background-color: var(--gold);
+  padding: 12px 18px;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.footer-booking-callout__btn:hover {
+  background-color: #E5C158;
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.35);
+}
+
+.footer-booking-callout__arrow {
+  font-size: 0.9375rem;
+  transition: transform var(--transition-fast);
+}
+
+.footer-booking-callout__btn:hover .footer-booking-callout__arrow {
+  transform: translateX(4px);
+}
+
+/* ==================================================
+   DIVIDER LINES
+   ================================================== */
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.07);
+  border: none;
+  margin: 0;
+}
+
+.footer-divider--subtle {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ==================================================
+   ROW 2: COPYRIGHT, LEGAL LINKS & BACK TO TOP
+   ================================================== */
+.footer-middle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 0;
+}
+
+.footer-legal-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.footer-copy {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: #8A8A8A;
+  margin: 0;
+}
+
+.footer-legal-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-legal__link {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: #8A8A8A;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-legal__link:hover {
+  color: #F5F5F5;
+}
+
+.footer-legal__dot {
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Back to Top Button */
+.btn-back-to-top {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background-color: transparent;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: #F5F5F5;
+  font-size: 1.125rem;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-back-to-top:hover {
+  background-color: var(--gold);
+  border-color: var(--gold);
+  color: var(--black);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.3);
+}
+
+/* ==================================================
+   ROW 3: DEVELOPER SIGNATURE (RAFAEL SETUBAL)
+   ================================================== */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 44px;
+  padding-bottom: 12px;
+}
+
+.footer-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.footer-credit:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.footer-credit__label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #8A8A8A;
+}
+
+.footer-credit__name {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #F5F5F5;
+  transition: color var(--transition-fast);
+}
+
+.footer-credit:hover .footer-credit__name {
+  color: var(--gold-light);
+}
+
+.footer-credit__logo {
+  height: 26px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  filter: contrast(1.1);
+  transition: filter var(--transition-fast);
+}
+
+.footer-credit:hover .footer-credit__logo {
+  filter: brightness(1.2);
+}
+
+/* ==================================================
+   RESPONSIVE: FOOTER
+   ================================================== */
+
+@media (max-width: 960px) {
+  .site-footer {
+    padding: 80px 0 44px 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 56px;
+  }
+
+  .footer-col--brand {
+    grid-column: 1 / -1;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-footer {
+    padding: 64px 0 36px 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-bottom: 48px;
+  }
+
+  .footer-col--brand {
+    align-items: flex-start;
+  }
+
+  .footer-brand__logo {
+    height: 80px;
+  }
+
+  .footer-middle {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 32px 0;
+  }
+
+  .footer-legal-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .btn-back-to-top {
+    align-self: flex-end;
+  }
+
+  .footer-bottom {
+    padding-top: 32px;
+    flex-direction: column;
+    gap: 12px;
+  }
+}

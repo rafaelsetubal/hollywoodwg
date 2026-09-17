@@ -1,0 +1,184 @@
+﻿/* ==================================================
+   HOLLYWOOD WG BARBEARIA — CINEMATIC BRAND PRELOADER
+   ================================================== */
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black);
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.85s cubic-bezier(0.77, 0, 0.175, 1),
+              visibility 0.85s cubic-bezier(0.77, 0, 0.175, 1),
+              transform 0.85s cubic-bezier(0.77, 0, 0.175, 1);
+  will-change: opacity, transform, visibility;
+}
+
+.preloader.is-loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(1.06);
+}
+
+.preloader__stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logo Wrapper with Specular Light Sweep */
+.preloader__logo-wrap {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-24);
+  animation: preloader-logo-enter 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.preloader__logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.25));
+}
+
+/* Specular Light Flare on Logo */
+.preloader__glint {
+  position: absolute;
+  top: 14%;
+  right: 18%;
+  width: 50px;
+  height: 20px;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  animation: preloader-glint-flash 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.preloader__glint-streak {
+  position: absolute;
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(244, 210, 122, 0.3) 20%,
+    #FFFFFF 50%,
+    rgba(244, 210, 122, 0.3) 80%,
+    transparent 100%
+  );
+}
+
+.preloader__glint-vertical {
+  position: absolute;
+  width: 1px;
+  height: 16px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(244, 210, 122, 0.3) 20%,
+    #FFFFFF 50%,
+    rgba(244, 210, 122, 0.3) 80%,
+    transparent 100%
+  );
+}
+
+.preloader__glint-core {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  box-shadow: 
+    0 0 6px 2px rgba(255, 255, 255, 1),
+    0 0 14px 3px rgba(212, 175, 55, 0.8);
+}
+
+/* Micro Line Loader */
+.preloader__bar {
+  width: 160px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: var(--space-16);
+}
+
+.preloader__bar-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  animation: preloader-bar-sweep 1.6s ease-in-out infinite;
+}
+
+.preloader__meta {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(233, 229, 220, 0.5);
+  animation: preloader-fade 1.4s ease-in-out infinite alternate;
+}
+
+/* Keyframes */
+@keyframes preloader-logo-enter {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes preloader-glint-flash {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.7) rotate(0deg);
+  }
+  30%, 50% {
+    opacity: 1;
+    transform: scale(1.3) rotate(15deg);
+  }
+  70% {
+    opacity: 0.3;
+    transform: scale(0.8) rotate(0deg);
+  }
+}
+
+@keyframes preloader-bar-sweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes preloader-fade {
+  0% {
+    opacity: 0.35;
+  }
+  100% {
+    opacity: 0.85;
+  }
+}

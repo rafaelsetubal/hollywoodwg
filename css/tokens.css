@@ -1,0 +1,67 @@
+﻿/* ==================================================
+   HOLLYWOOD WG BARBEARIA — DESIGN TOKENS
+   ================================================== */
+
+:root {
+  /* --- Colors --- */
+  --black: #050505;
+  --charcoal: #111111;
+  --gold: #D4AF37;
+  --gold-light: #F4D27A;
+  --gold-dark: #8C6A20;
+  --white: #FFFFFF;
+  --off-white: #E9E5DC;
+
+  /* --- Borders --- */
+  --border-gold: rgba(212, 175, 55, 0.28);
+  --border-light: rgba(255, 255, 255, 0.14);
+  --border-subtle: rgba(255, 255, 255, 0.06);
+
+  /* --- Typography --- */
+  --font-headline: 'Bebas Neue', 'Oswald', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Space Mono', monospace;
+
+  /* --- Font Weights --- */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* --- Font Sizes --- */
+  --fs-micro: 0.6875rem;    /* 11px */
+  --fs-caption: 0.75rem;    /* 12px */
+  --fs-eyebrow: 0.8125rem;  /* 13px */
+  --fs-nav: 0.8125rem;      /* 13px */
+  --fs-body: 0.9375rem;     /* 15px */
+  --fs-subhead: 1.0625rem;  /* 17px */
+  --fs-h3: 1.5rem;          /* 24px */
+  --fs-h2: 2.25rem;         /* 36px */
+  --fs-h1: clamp(4.25rem, 9.5vw, 8rem); /* Hero display */
+
+  /* --- Spacing Scale --- */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-96: 96px;
+  --space-128: 128px;
+
+  /* --- Shape / Radii --- */
+  --radius-none: 0px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+
+  /* --- Grid & Layout --- */
+  --container-max-width: 1440px;
+  --grid-gap: var(--space-24);
+  --grid-padding: var(--space-32);
+
+  /* --- Transitions --- */
+  --transition-fast: 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}

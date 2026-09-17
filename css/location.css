@@ -1,0 +1,488 @@
+/* ==================================================
+   HOLLYWOOD WG BARBEARIA — SEÇÃO NOSSA UNIDADE (VISITE-NOS)
+   ================================================== */
+
+.location-section {
+  position: relative;
+  background-color: var(--black);
+  color: var(--white);
+  padding: 120px 0 100px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+/* Subtle Architectural Ambient Glow */
+.location-section::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: -10%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.location-section__container {
+  position: relative;
+  z-index: 5;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--grid-padding);
+}
+
+/* 2-Column Grid Layout: Info Left / Map Right */
+.location-layout {
+  display: grid;
+  grid-template-columns: 44% 56%;
+  gap: var(--space-64);
+  align-items: center;
+}
+
+/* ==================================================
+   LEFT COLUMN — INFO & CONTACTS
+   ================================================== */
+.location-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.location-header {
+  margin-bottom: var(--space-32);
+}
+
+.location-header__icon {
+  width: 34px;
+  height: 34px;
+  display: block;
+  margin-bottom: var(--space-16);
+  opacity: 0.95;
+}
+
+.location-header__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-12);
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-8);
+}
+
+.location-header__eyebrow-line {
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background-color: var(--gold);
+}
+
+.location-header__title {
+  font-family: var(--font-headline);
+  font-size: clamp(3.25rem, 6.5vw, 5.25rem);
+  font-weight: var(--fw-regular);
+  line-height: 0.92;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin: 0 0 var(--space-12) 0;
+}
+
+.location-header__subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+}
+
+/* Detail Info List */
+.location-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+  margin-bottom: var(--space-36);
+  padding: var(--space-24) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.location-detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-16);
+}
+
+.location-detail-icon {
+  width: 20px;
+  height: 20px;
+  stroke: var(--gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.location-detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.location-detail-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.location-detail-text {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--white);
+}
+
+.location-detail-sub {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.location-detail-link {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--white);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.location-detail-link:hover {
+  color: var(--gold);
+}
+
+/* Action Button */
+.location-cta-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.btn-directions {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-12);
+  padding: 16px 36px;
+  background-color: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: var(--font-headline);
+  font-size: 1.0625rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.btn-directions:hover {
+  background-color: var(--gold);
+  color: var(--black);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
+}
+
+.btn-directions__arrow {
+  transition: transform var(--transition-fast);
+}
+
+.btn-directions:hover .btn-directions__arrow {
+  transform: translateX(4px);
+}
+
+/* ==================================================
+   RIGHT COLUMN — EDITORIAL DARK MAP & INTERACTIVE EMBED
+   ================================================== */
+.location-map-wrap {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.location-map-container {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background-color: var(--black);
+}
+
+/* Static Editorial Map Stage (Initial state) */
+.location-map-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+.location-map-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* Smooth radial fade blending seamlessly into #050505 */
+  -webkit-mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 48%, rgba(0, 0, 0, 0.8) 72%, transparent 100%);
+  mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 48%, rgba(0, 0, 0, 0.8) 72%, transparent 100%);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+}
+
+.location-map-card:hover .location-map-img {
+  transform: scale(1.04);
+  filter: contrast(1.08) brightness(1.03);
+}
+
+/* Vignette overlay for 100% borderless melt */
+.location-map-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at center, transparent 40%, rgba(5, 5, 5, 0.5) 70%, var(--black) 100%);
+}
+
+/* ==================================================
+   INTERACTIVE MAP EMBED (LEAFLET + DARK MATTER TILES)
+   ================================================== */
+.location-map-interactive {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10;
+  background-color: #0c0c0c;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.9);
+}
+
+.leaflet-map-canvas {
+  width: 100%;
+  height: 100%;
+  background-color: #0c0c0c;
+}
+
+/* Dark Mode Inversion & Styling for OpenStreetMap Tiles (Clean, 100% Free, Zero Watermark) */
+.leaflet-map-canvas .leaflet-tile-pane {
+  filter: invert(100%) hue-rotate(180deg) brightness(82%) contrast(118%) grayscale(25%);
+}
+
+/* Dark theme overrides for Leaflet controls */
+.leaflet-container {
+  background-color: #0c0c0c !important;
+  font-family: var(--font-body) !important;
+}
+
+.leaflet-bar {
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7) !important;
+  border-radius: 2px !important;
+}
+
+.leaflet-bar a {
+  background-color: rgba(14, 14, 14, 0.9) !important;
+  color: var(--gold) !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2) !important;
+  transition: background-color var(--transition-fast) !important;
+}
+
+.leaflet-bar a:hover {
+  background-color: var(--gold) !important;
+  color: var(--black) !important;
+}
+
+/* Custom Gold Marker in Leaflet */
+.leaflet-gold-marker {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.leaflet-marker-badge {
+  background: #111111;
+  border: 1px solid var(--gold);
+  border-radius: 20px;
+  padding: 3px 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
+}
+
+.leaflet-marker-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--gold);
+  box-shadow: 0 0 6px var(--gold);
+}
+
+.leaflet-marker-title {
+  font-family: var(--font-headline);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.leaflet-marker-svg {
+  width: 26px;
+  height: 32px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.8));
+}
+
+/* Leaflet Popup Styling */
+.leaflet-popup-content-wrapper {
+  background-color: #161616 !important;
+  color: var(--white) !important;
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+  border-radius: 2px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8) !important;
+}
+
+.leaflet-popup-tip {
+  background-color: #161616 !important;
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+}
+
+/* Bottom Floating Interactive Bar */
+.location-map-interactive-bar {
+  position: absolute;
+  bottom: var(--space-16);
+  left: var(--space-16);
+  right: var(--space-16);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+  z-index: 1000;
+  pointer-events: auto;
+}
+
+/* Direct GPS Navigation Button */
+.btn-gps-direct {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: 10px 18px;
+  background-color: var(--black);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: var(--font-headline);
+  font-size: 0.875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8);
+  transition: all var(--transition-fast);
+}
+
+.btn-gps-direct:hover {
+  background-color: var(--gold);
+  color: var(--black);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.35);
+}
+
+.btn-gps-direct__icon {
+  width: 14px;
+  height: 14px;
+}
+
+.btn-gps-direct__arrow {
+  transition: transform var(--transition-fast);
+}
+
+.btn-gps-direct:hover .btn-gps-direct__arrow {
+  transform: translate(2px, -2px);
+}
+
+/* Close / Restore Button */
+.location-map-close-btn {
+  background-color: rgba(14, 14, 14, 0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #F5F5F5;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.location-map-close-btn:hover {
+  background-color: #F5F5F5;
+  color: var(--black);
+}
+
+/* Active State: Interactive Map Revealed */
+.location-map-container.is-interactive .location-map-card {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.location-map-container.is-interactive .location-map-interactive {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ==================================================
+   RESPONSIVE: LOCATION SECTION
+   ================================================== */
+
+@media (max-width: 1024px) {
+  .location-layout {
+    grid-template-columns: 48% 52%;
+    gap: var(--space-48);
+  }
+}
+
+@media (max-width: 860px) {
+  .location-section {
+    padding: 100px 0 72px 0;
+  }
+
+  .location-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-40);
+  }
+
+  .location-map-container {
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+  }
+
+  .btn-directions {
+    width: 100%;
+  }
+}

@@ -1,0 +1,173 @@
+/* ==================================================
+   HOLLYWOOD WG BARBEARIA — HEADER & HERO FIXED (SOLID BLACK)
+   ================================================== */
+
+/* --- Site Header (Pure Solid Black, Zero Border) --- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 14px 0;
+  background-color: #050505;
+  border-bottom: none;
+  transition: padding var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.site-header.is-scrolled {
+  padding: 10px 0;
+  background-color: #050505;
+  border-bottom: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.85);
+}
+
+.site-header__container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--grid-padding);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-32);
+}
+
+.site-header__logo-wrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.site-header__nav {
+  display: flex;
+  align-items: center;
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-24);
+  flex-shrink: 0;
+}
+
+/* Mobile Nav Toggle */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-8);
+  color: var(--white);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  z-index: 1200;
+}
+
+.nav-toggle__bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--white);
+  transition: transform var(--transition-fast), opacity var(--transition-fast), background-color var(--transition-fast);
+}
+
+.nav-toggle:hover .nav-toggle__bar {
+  background-color: var(--gold);
+}
+
+.nav-toggle.is-active .nav-toggle__bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.is-active .nav-toggle__bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.is-active .nav-toggle__bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* --- Hero Section --- */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 720px;
+  max-height: 1080px;
+  width: 100%;
+  background-color: var(--black);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Hero Asymmetrical Editorial Grid */
+.hero__container {
+  position: relative;
+  z-index: 10;
+  max-width: var(--container-max-width);
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 130px var(--grid-padding) var(--space-32) var(--grid-padding);
+  display: grid;
+  grid-template-columns: 32% 68%;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+/* Hero Content Column (Left, ~32%) */
+.hero__content {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-right: var(--space-8);
+}
+
+.hero__cta-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-24);
+  flex-wrap: wrap;
+}
+
+/* Hero Visual Column (Right, ~68%, Advancing into Center) */
+.hero__visual {
+  position: relative;
+  height: 100%;
+  max-height: calc(100vh - 140px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: -50px;
+}
+
+.hero__visual-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--charcoal);
+}
+
+/* Cinematic Seamless Fade into #050505 Background */
+.hero__visual-frame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(90deg, var(--black) 0%, rgba(5, 5, 5, 0.88) 12%, rgba(5, 5, 5, 0.2) 32%, transparent 55%),
+    linear-gradient(0deg, var(--black) 0%, rgba(5, 5, 5, 0.45) 8%, transparent 20%),
+    linear-gradient(180deg, var(--black) 0%, rgba(5, 5, 5, 0.4) 8%, transparent 20%);
+  z-index: 2;
+  pointer-events: none;
+}

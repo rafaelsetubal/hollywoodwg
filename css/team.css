@@ -1,0 +1,378 @@
+/* ==================================================
+   HOLLYWOOD WG BARBEARIA — TEAM / MESTRES (OFFICIAL BRAND ASSETS)
+   ================================================== */
+
+.team-section {
+  position: relative;
+  background-color: var(--black);
+  color: var(--white);
+  padding: 120px 0 100px 0;
+  overflow: hidden;
+}
+
+/* Subtle Architectural SVG Grid Background */
+.team-section__bg-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/images/team-frame.svg');
+  background-repeat: repeat;
+  background-size: 260px 410px;
+  background-position: center top;
+  opacity: 0.16;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.team-section__container {
+  position: relative;
+  z-index: 5;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--grid-padding);
+}
+
+/* Section Header (Mustache above title, no scissors) */
+.team-header {
+  margin-bottom: var(--space-48);
+  text-align: left;
+}
+
+.team-header__mustache-icon {
+  width: 38px;
+  height: 38px;
+  display: block;
+  margin-bottom: var(--space-16);
+  opacity: 0.95;
+}
+
+.team-header__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-12);
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-8);
+}
+
+.team-header__eyebrow-line {
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background-color: var(--gold);
+}
+
+.team-header__title {
+  font-family: var(--font-headline);
+  font-size: clamp(3.75rem, 8vw, 6.5rem);
+  font-weight: var(--fw-regular);
+  line-height: 0.88;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin: 0;
+}
+
+/* ==================================================
+   5-COLUMN SYMMETRICAL EDITORIAL GRID
+   ================================================== */
+.team-grid-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-24);
+  align-items: end;
+  width: 100%;
+  padding-top: 24px;
+}
+
+/* Team Card (Cutout + Ornamental SVG Frame) */
+.team-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  overflow: visible;
+  transition: transform var(--transition-normal);
+}
+
+/* Visual Stage with Frame & Cutout Overlap (No Clipping) */
+.team-card__visual {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  max-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+/* Ornamental SVG Frame Behind */
+.team-card__frame-bg {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 90%;
+  height: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: filter var(--transition-normal), opacity var(--transition-normal);
+}
+
+.team-card__frame-svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity var(--transition-fast), filter var(--transition-fast);
+}
+
+/* Cutout Person Wrapper (Full Height, Complete Head to Torso) */
+.team-card__cutout-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.team-card__cutout-img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 100%;
+  width: auto;
+  max-width: 120%;
+  object-fit: contain;
+  object-position: bottom center;
+  display: block;
+  transform-origin: bottom center;
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.45s ease;
+}
+
+/* Default Photo State */
+.team-card__cutout-img--default {
+  opacity: 1;
+  transform: translateX(-50%) scale(1) translateY(0);
+  filter: contrast(1.06) brightness(0.98);
+  z-index: 2;
+}
+
+/* Alternate Hover Photo State */
+.team-card__cutout-img--hover {
+  opacity: 0;
+  transform: translateX(-50%) scale(1) translateY(0);
+  filter: contrast(1.06) brightness(0.98);
+  z-index: 3;
+}
+
+/* Active Hover & Mobile Tap Trigger */
+.team-card:hover .team-card__cutout-img--default,
+.team-card.is-active .team-card__cutout-img--default {
+  opacity: 0;
+  transform: translateX(-50%) scale(1.02) translateY(-2px);
+}
+
+.team-card:hover .team-card__cutout-img--hover,
+.team-card.is-active .team-card__cutout-img--hover {
+  opacity: 1;
+  transform: translateX(-50%) scale(1.04) translateY(-4px);
+  filter: contrast(1.08) brightness(1.02);
+}
+
+/* Fallback for single image cards */
+.team-card:hover .team-card__cutout-img:only-child,
+.team-card.is-active .team-card__cutout-img:only-child {
+  opacity: 1;
+  transform: translateX(-50%) scale(1.04) translateY(-4px);
+  filter: contrast(1.1) brightness(1.04);
+}
+
+/* Member Information */
+.team-card__info {
+  margin-top: var(--space-20);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-4);
+  width: 100%;
+  position: relative;
+  z-index: 4;
+}
+
+.team-card__index {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.18em;
+  color: var(--gold);
+}
+
+.team-card__name {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin: 0;
+  transition: color var(--transition-fast);
+}
+
+.team-card__instagram {
+  font-family: var(--font-mono);
+  font-size: var(--fs-caption);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--off-white);
+  opacity: 0.65;
+  text-decoration: none;
+  transition: opacity var(--transition-fast), color var(--transition-fast);
+}
+
+/* Frame and Text Hover Interactions */
+.team-card:hover .team-card__frame-svg,
+.team-card.is-active .team-card__frame-svg {
+  opacity: 1;
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+}
+
+.team-card:hover .team-card__name,
+.team-card.is-active .team-card__name {
+  color: var(--gold-light);
+}
+
+.team-card:hover .team-card__instagram,
+.team-card.is-active .team-card__instagram {
+  opacity: 1;
+  color: var(--gold);
+}
+
+/* Mobile Carousel Navigation Controls */
+.team-mobile-controls {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-24);
+  margin-top: var(--space-32);
+}
+
+.team-mobile-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.team-mobile-btn:hover {
+  transform: scale(1.08);
+}
+
+.team-mobile-btn:active {
+  transform: scale(0.95);
+}
+
+.team-mobile-btn img {
+  width: 52px;
+  height: 52px;
+  display: block;
+}
+
+/* ==================================================
+   RESPONSIVE: TEAM SECTION
+   ================================================== */
+
+@media (max-width: 1200px) {
+  .team-grid {
+    gap: var(--space-16);
+  }
+
+  .team-card__name {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 960px) {
+  .team-section {
+    padding: 100px 0 80px 0;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-32) var(--space-20);
+  }
+}
+
+@media (max-width: 768px) {
+  .team-section {
+    padding: 100px 0 72px 0;
+  }
+
+  .team-header {
+    margin-bottom: var(--space-32);
+  }
+
+  .team-grid-wrapper {
+    overflow: visible;
+  }
+
+  .team-grid {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: var(--space-16);
+    padding-top: 36px;
+    padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .team-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .team-card {
+    flex: 0 0 72%;
+    min-width: 220px;
+    max-width: 280px;
+    scroll-snap-align: center;
+  }
+
+  .team-card__visual {
+    height: 350px;
+    max-height: none;
+  }
+
+  .team-mobile-controls {
+    display: flex;
+  }
+}
