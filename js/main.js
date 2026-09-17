@@ -147,14 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
       handle: '@gaguinho_do_corteofc',
       instagram: 'https://www.instagram.com/gaguinho_do_corteofc/',
       image: 'assets/images/barbers/gago.png'
-    },
-    {
-      id: 'barber-3',
-      name: 'Israel Souza',
-      handle: '@rael_barber__',
-      instagram: 'https://www.instagram.com/rael_barber__/',
-      image: 'assets/images/barbers/rael.png',
-      temporaryDuplicate: true
     }
   ];
 
