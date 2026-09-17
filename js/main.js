@@ -587,4 +587,42 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  /* ==================================================
+     11. MOBILE FLOATING CTA BAR VISIBILITY CONTROLLER
+     (Only appears once user scrolls past the Hero section)
+     ================================================== */
+  const mobileFloatingBar = document.getElementById('mobile-floating-bar');
+  const heroSection = document.getElementById('inicio');
+
+  if (mobileFloatingBar && heroSection) {
+    if ('IntersectionObserver' in window) {
+      const heroObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          // When hero is NOT intersecting (or has scrolled away), show the floating bar
+          if (!entry.isIntersecting) {
+            mobileFloatingBar.classList.add('is-visible');
+          } else {
+            mobileFloatingBar.classList.remove('is-visible');
+          }
+        });
+      }, {
+        threshold: 0.15 // Triggers when hero is scrolled past
+      });
+
+      heroObserver.observe(heroSection);
+    } else {
+      // Fallback for older browsers
+      const checkScroll = () => {
+        const heroBottom = heroSection.getBoundingClientRect().bottom;
+        if (heroBottom < 100) {
+          mobileFloatingBar.classList.add('is-visible');
+        } else {
+          mobileFloatingBar.classList.remove('is-visible');
+        }
+      };
+      window.addEventListener('scroll', checkScroll, { passive: true });
+      checkScroll();
+    }
+  }
 });
