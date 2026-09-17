@@ -283,50 +283,81 @@
   height: 18px;
 }
 
-/* --- Central CTA Button --- */
+/* --- Central CTA Button (Secondary Luxury Outline with Prominent Gold Emblem) --- */
 .instagram-cta-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: var(--space-16);
+  margin-top: var(--space-24);
 }
 
 .btn-instagram {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-12);
-  padding: 14px 28px;
-  background-color: #0c0c0c;
-  border: 1px solid rgba(212, 175, 55, 0.4);
+  gap: var(--space-16);
+  padding: 8px 32px 8px 10px;
+  background-color: rgba(10, 10, 10, 0.6);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  border-radius: 4px;
   color: var(--white);
-  font-family: var(--font-headline);
-  font-size: 1rem;
-  letter-spacing: 0.15em;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   text-decoration: none;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), inset 0 0 16px rgba(212, 175, 55, 0.05);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-instagram__icon {
-  width: 20px;
-  height: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
   flex-shrink: 0;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+  box-shadow: 0 0 14px rgba(212, 175, 55, 0.4);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+}
+
+.btn-instagram span {
+  color: var(--white);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  letter-spacing: 0.14em;
+  transition: color var(--transition-fast);
 }
 
 .btn-instagram:hover {
-  background-color: var(--gold);
+  background-color: rgba(212, 175, 55, 0.1);
   border-color: var(--gold);
-  color: var(--black);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25);
+  box-shadow: 
+    0 0 28px rgba(212, 175, 55, 0.32),
+    0 8px 24px rgba(0, 0, 0, 0.8),
+    inset 0 0 18px rgba(212, 175, 55, 0.12);
 }
 
 .btn-instagram:hover .btn-instagram__icon {
-  transform: rotate(6deg) scale(1.08);
+  transform: scale(1.08) rotate(4deg);
+  filter: drop-shadow(0 0 12px rgba(244, 210, 122, 0.85));
+}
+
+.btn-instagram:hover span {
+  color: var(--gold-light);
+}
+
+.btn-instagram:active {
+  transform: translateY(0) scale(0.98);
 }
 
 /* ==================================================
@@ -378,9 +409,19 @@
   }
 
   .btn-instagram {
-    width: 100%;
-    max-width: 320px;
-    padding: 13px 20px;
-    font-size: 0.9375rem;
+    width: auto;
+    max-width: 100%;
+    padding: 7px 20px 7px 8px;
+    font-size: 0.8125rem;
+    gap: var(--space-12);
+  }
+
+  .btn-instagram__icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .btn-instagram span {
+    font-size: 0.8125rem;
   }
 }

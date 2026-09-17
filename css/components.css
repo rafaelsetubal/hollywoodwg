@@ -87,7 +87,6 @@
 .btn-primary,
 .btn-header,
 .btn-directions,
-.btn-instagram,
 .btn-product-buy:not(.btn-product-buy--disabled),
 .footer-booking-callout__btn,
 .mobile-floating-bar__btn {
@@ -123,7 +122,6 @@
 .btn-primary::before,
 .btn-header::before,
 .btn-directions::before,
-.btn-instagram::before,
 .btn-product-buy:not(.btn-product-buy--disabled):before,
 .footer-booking-callout__btn::before,
 .mobile-floating-bar__btn::before {
@@ -152,7 +150,6 @@
 .btn-primary::after,
 .btn-header::after,
 .btn-directions::after,
-.btn-instagram::after,
 .footer-booking-callout__btn::after,
 .mobile-floating-bar__btn::after {
   content: '';
@@ -207,7 +204,6 @@
 
 .btn-primary span,
 .btn-directions span,
-.btn-instagram span,
 .btn-product-buy span,
 .footer-booking-callout__btn span,
 .mobile-floating-bar__btn span {
@@ -233,7 +229,6 @@
 }
 
 .btn-directions svg,
-.btn-instagram svg,
 .btn-product-buy svg,
 .footer-booking-callout__btn svg,
 .mobile-floating-bar__icon {
@@ -247,7 +242,6 @@
 .btn-primary:hover,
 .btn-header:hover,
 .btn-directions:hover,
-.btn-instagram:hover,
 .btn-product-buy:not(.btn-product-buy--disabled):hover,
 .footer-booking-callout__btn:hover,
 .mobile-floating-bar__btn:hover {
@@ -271,7 +265,6 @@
 
 .btn-primary:active,
 .btn-directions:active,
-.btn-instagram:active,
 .btn-product-buy:active,
 .footer-booking-callout__btn:active,
 .mobile-floating-bar__btn:active {
