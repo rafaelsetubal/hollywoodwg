@@ -20,8 +20,8 @@
   <meta name="ICBM" content="-14.793617, -39.278385">
 
   <!-- Favicon & Icons -->
-  <link rel="icon" type="image/png" href="assets/images/logo.png">
-  <link rel="apple-touch-icon" href="assets/images/logo.png">
+  <link rel="icon" type="image/webp" href="assets/images/logo.webp">
+  <link rel="apple-touch-icon" href="assets/images/logo.webp">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -29,13 +29,13 @@
   <meta property="og:site_name" content="Hollywood WG Barbearia">
   <meta property="og:title" content="Hollywood WG Barbearia Itabuna — Estilo, Disciplina & Confiança">
   <meta property="og:description" content="Experiência premium de barbearia clássica e contemporânea em Itabuna - BA. Tradição no corte, respeito na cadeira.">
-  <meta property="og:image" content="assets/images/hero-barber.jpg">
+  <meta property="og:image" content="assets/images/hero-barber.webp">
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Hollywood WG Barbearia Itabuna">
   <meta name="twitter:description" content="A melhor barbearia em Itabuna - BA. Cortes clássicos, degradê e barba premium. Agende seu horário via WhatsApp!">
-  <meta name="twitter:image" content="assets/images/hero-barber.jpg">
+  <meta name="twitter:image" content="assets/images/hero-barber.webp">
 
   <!-- Schema.org Structured Data (LocalBusiness / BarberShop) for Google SEO -->
   <script type="application/ld+json">
@@ -43,7 +43,7 @@
     "@context": "https://schema.org",
     "@type": "BarberShop",
     "name": "Hollywood WG Barbearia",
-    "image": "assets/images/logo.png",
+    "image": "assets/images/logo.webp",
     "description": "Barbearia premium em Itabuna - BA. Cortes clássicos, degradê de alta precisão, barba com toalha quente e atendimento exclusivo.",
     "telephone": "+557399521718",
     "priceRange": "$$",
@@ -74,13 +74,13 @@
   }
   </script>
 
+  <!-- Preload Critical LCP Hero Image -->
+  <link rel="preload" as="image" href="assets/images/hero-barber.webp" fetchpriority="high" type="image/webp">
+
   <!-- Google Fonts: Bebas Neue, Oswald, Plus Jakarta Sans, Space Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-
-  <!-- Leaflet Maps CSS (Free OpenStreetMap API / No Key) -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/tokens.css">
@@ -103,7 +103,7 @@
   <div class="preloader" id="preloader" aria-hidden="true">
     <div class="preloader__stage">
       <div class="preloader__logo-wrap">
-        <img src="assets/images/logo.png" alt="Hollywood WG Barbearia" class="preloader__logo-img">
+        <img src="assets/images/logo.webp" alt="Hollywood WG Barbearia" class="preloader__logo-img" width="160" height="160" fetchpriority="high">
         <div class="preloader__glint">
           <span class="preloader__glint-streak"></span>
           <span class="preloader__glint-vertical"></span>
@@ -126,7 +126,7 @@
       <!-- Brand Logo (Official unaltered asset) -->
       <div class="site-header__logo-wrap">
         <a href="#inicio" class="brand-logo" aria-label="Hollywood WG Barbearia - Início">
-          <img src="assets/images/logo.png" alt="Hollywood WG Barbearia" class="brand-logo__img">
+          <img src="assets/images/logo.webp" alt="Hollywood WG Barbearia" class="brand-logo__img" width="160" height="50">
         </a>
       </div>
 
@@ -134,7 +134,7 @@
       <nav class="site-header__nav" id="main-nav" aria-label="Navegação Principal">
         <!-- Top Logo in Drawer -->
         <div class="site-header__nav-top">
-          <img src="assets/images/logo.png" alt="Hollywood WG Barbearia" class="site-header__nav-logo">
+          <img src="assets/images/logo.webp" alt="Hollywood WG Barbearia" class="site-header__nav-logo" width="140" height="44" loading="lazy">
         </div>
 
         <!-- Navigation Links -->
@@ -222,10 +222,14 @@
         <div class="hero__visual">
           <div class="hero__visual-frame">
             <img 
-              src="assets/images/hero-barber.jpg" 
+              src="assets/images/hero-barber.webp" 
               alt="Barbeiro profissional executando corte de alta precisão na Hollywood WG Barbearia" 
               class="image-cinematic"
               loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              width="680"
+              height="600"
             >
           </div>
         </div>
@@ -241,7 +245,7 @@
         
         <!-- Services Section Header with Official Scissors -->
         <div class="services-header">
-          <img src="assets/images/CORTE.svg" alt="" aria-hidden="true" class="services-header__brand-icon">
+          <img src="assets/images/CORTE.svg" alt="" aria-hidden="true" class="services-header__brand-icon" width="38" height="38">
           <div class="services-header__eyebrow">
             <span class="services-header__eyebrow-line" aria-hidden="true"></span>
             <span>EXPERIÊNCIA COMPLETA</span>
@@ -265,7 +269,7 @@
                 <span class="service-row__price">R$ --</span>
               </div>
               <div class="service-row__mobile-preview">
-                <img src="assets/images/service-corte.jpg" alt="Corte Masculino realizado na Hollywood WG" class="service-row__mobile-img" loading="lazy">
+                <img src="assets/images/service-corte.webp" alt="Corte Masculino realizado na Hollywood WG" class="service-row__mobile-img" loading="lazy" decoding="async" width="400" height="260">
               </div>
             </div>
 
@@ -277,7 +281,7 @@
                 <span class="service-row__price">R$ --</span>
               </div>
               <div class="service-row__mobile-preview">
-                <img src="assets/images/service-combo.jpg" alt="Corte e Barba completo na Hollywood WG" class="service-row__mobile-img" loading="lazy">
+                <img src="assets/images/service-combo.webp" alt="Corte e Barba completo na Hollywood WG" class="service-row__mobile-img" loading="lazy" decoding="async" width="400" height="260">
               </div>
             </div>
 
@@ -289,7 +293,7 @@
                 <span class="service-row__price">R$ --</span>
               </div>
               <div class="service-row__mobile-preview">
-                <img src="assets/images/service-barba.jpg" alt="Barboterapia e Barba Tradicional na Hollywood WG" class="service-row__mobile-img" loading="lazy">
+                <img src="assets/images/service-barba.webp" alt="Barboterapia e Barba Tradicional na Hollywood WG" class="service-row__mobile-img" loading="lazy" decoding="async" width="400" height="260">
               </div>
             </div>
 
@@ -301,7 +305,7 @@
                 <span class="service-row__price">R$ --</span>
               </div>
               <div class="service-row__mobile-preview">
-                <img src="assets/images/service-sobrancelha.jpg" alt="Design e alinhamento de Sobrancelha na Hollywood WG" class="service-row__mobile-img" loading="lazy">
+                <img src="assets/images/service-sobrancelha.webp" alt="Design e alinhamento de Sobrancelha na Hollywood WG" class="service-row__mobile-img" loading="lazy" decoding="async" width="400" height="260">
               </div>
             </div>
 
@@ -313,7 +317,7 @@
                 <span class="service-row__price">R$ --</span>
               </div>
               <div class="service-row__mobile-preview">
-                <img src="assets/images/service-acabamento.jpg" alt="Acabamento e Pezinho na Hollywood WG" class="service-row__mobile-img" loading="lazy">
+                <img src="assets/images/service-acabamento.webp" alt="Acabamento e Pezinho na Hollywood WG" class="service-row__mobile-img" loading="lazy" decoding="async" width="400" height="260">
               </div>
             </div>
 
@@ -324,23 +328,23 @@
             <div class="services-visual__frame">
               
               <div class="services-visual__img-layer is-active" id="preview-corte">
-                <img src="assets/images/service-corte.jpg" alt="Corte realizado na Hollywood WG" class="services-visual__img">
+                <img src="assets/images/service-corte.webp" alt="Corte realizado na Hollywood WG" class="services-visual__img" loading="lazy" decoding="async" width="600" height="400">
               </div>
 
               <div class="services-visual__img-layer" id="preview-combo">
-                <img src="assets/images/service-combo.jpg" alt="Corte e Barba completo" class="services-visual__img">
+                <img src="assets/images/service-combo.webp" alt="Corte e Barba completo" class="services-visual__img" loading="lazy" decoding="async" width="600" height="400">
               </div>
 
               <div class="services-visual__img-layer" id="preview-barba">
-                <img src="assets/images/service-barba.jpg" alt="Barboterapia e Barba Tradicional" class="services-visual__img">
+                <img src="assets/images/service-barba.webp" alt="Barboterapia e Barba Tradicional" class="services-visual__img" loading="lazy" decoding="async" width="600" height="400">
               </div>
 
               <div class="services-visual__img-layer" id="preview-sobrancelha">
-                <img src="assets/images/service-sobrancelha.jpg" alt="Design e alinhamento de Sobrancelha" class="services-visual__img">
+                <img src="assets/images/service-sobrancelha.webp" alt="Design e alinhamento de Sobrancelha" class="services-visual__img" loading="lazy" decoding="async" width="600" height="400">
               </div>
 
               <div class="services-visual__img-layer" id="preview-acabamento">
-                <img src="assets/images/service-acabamento.jpg" alt="Acabamento e Pezinho" class="services-visual__img">
+                <img src="assets/images/service-acabamento.webp" alt="Acabamento e Pezinho" class="services-visual__img" loading="lazy" decoding="async" width="600" height="400">
               </div>
 
             </div>
@@ -362,7 +366,7 @@
         
         <!-- Section Header with Official Mustache Above Title -->
         <div class="team-header">
-          <img src="assets/images/MESTRES.svg" alt="" aria-hidden="true" class="team-header__mustache-icon">
+          <img src="assets/images/MESTRES.svg" alt="" aria-hidden="true" class="team-header__mustache-icon" width="38" height="38">
           <div class="team-header__eyebrow">
             <span class="team-header__eyebrow-line" aria-hidden="true"></span>
             <span>NOSSA EQUIPE</span>
@@ -380,11 +384,11 @@
             <div class="team-card" tabindex="0">
               <div class="team-card__visual">
                 <div class="team-card__frame-bg">
-                  <img src="assets/images/team-frame.svg" alt="" aria-hidden="true" class="team-card__frame-svg">
+                  <img src="assets/images/team-frame.svg" alt="" aria-hidden="true" class="team-card__frame-svg" width="228" height="359">
                 </div>
                 <div class="team-card__cutout-wrap">
-                  <img src="assets/images/barbers/rael.png" alt="Israel Souza (Rael)" class="team-card__cutout-img team-card__cutout-img--default" loading="lazy">
-                  <img src="assets/images/barbers/rael-hover.png" alt="Israel Souza (Rael) — Posição 2" class="team-card__cutout-img team-card__cutout-img--hover" loading="lazy">
+                  <img src="assets/images/barbers/rael.webp" alt="Israel Souza (Rael)" class="team-card__cutout-img team-card__cutout-img--default" loading="lazy" decoding="async" width="320" height="420">
+                  <img src="assets/images/barbers/rael-hover.webp" alt="Israel Souza (Rael) — Posição 2" class="team-card__cutout-img team-card__cutout-img--hover" loading="lazy" decoding="async" width="320" height="420">
                 </div>
               </div>
               <div class="team-card__info">
@@ -398,11 +402,11 @@
             <div class="team-card" tabindex="0">
               <div class="team-card__visual">
                 <div class="team-card__frame-bg">
-                  <img src="assets/images/team-frame.svg" alt="" aria-hidden="true" class="team-card__frame-svg">
+                  <img src="assets/images/team-frame.svg" alt="" aria-hidden="true" class="team-card__frame-svg" width="228" height="359">
                 </div>
                 <div class="team-card__cutout-wrap">
-                  <img src="assets/images/barbers/gago.png" alt="Gaguinho Do Corte" class="team-card__cutout-img team-card__cutout-img--default" loading="lazy">
-                  <img src="assets/images/barbers/gago-hover.png" alt="Gaguinho Do Corte — Posição 2" class="team-card__cutout-img team-card__cutout-img--hover" loading="lazy">
+                  <img src="assets/images/barbers/gago.webp" alt="Gaguinho Do Corte" class="team-card__cutout-img team-card__cutout-img--default" loading="lazy" decoding="async" width="320" height="420">
+                  <img src="assets/images/barbers/gago-hover.webp" alt="Gaguinho Do Corte — Posição 2" class="team-card__cutout-img team-card__cutout-img--hover" loading="lazy" decoding="async" width="320" height="420">
                 </div>
               </div>
               <div class="team-card__info">
@@ -436,7 +440,7 @@
         
         <!-- Instagram Header (Official SVG + Brand Typography) -->
         <div class="instagram-header">
-          <img src="assets/images/instagram.svg" alt="" aria-hidden="true" class="instagram-header__icon">
+          <img src="assets/images/instagram.svg" alt="" aria-hidden="true" class="instagram-header__icon" width="38" height="38">
           <div class="instagram-header__eyebrow">
             <span class="instagram-header__eyebrow-line" aria-hidden="true"></span>
             <span>NOSSO UNIVERSO</span>
@@ -453,15 +457,13 @@
           <div class="instagram-col">
             <!-- FOTO PRINCIPAL: 16.webp (Close lateral / Fade) -->
             <div class="instagram-card instagram-card--portrait instagram-card--featured" data-id="ig-1" tabindex="0">
-              <img src="assets/images/insta/16.webp" alt="Fade de alta precisão — Hollywood WG Barbearia" class="instagram-card__media" loading="lazy">
+              <img src="assets/images/insta/16.webp" alt="Fade de alta precisão — Hollywood WG Barbearia" class="instagram-card__media" loading="lazy" decoding="async" width="400" height="500">
               <div class="instagram-card__overlay"></div>
             </div>
 
             <!-- VÍDEO DE CORTE: 6.mp4 (Reels 9:16) -->
             <div class="instagram-card instagram-card--reel" data-id="ig-2" tabindex="0">
-              <video class="instagram-card__media" autoplay muted loop playsinline preload="metadata">
-                <source src="assets/images/insta/6.mp4" type="video/mp4">
-              </video>
+              <video class="instagram-card__media lazy-video" data-src="assets/images/insta/6.mp4" poster="assets/images/insta/poster-6.webp" muted loop playsinline preload="none" aria-label="Vídeo de corte na Hollywood WG Barbearia"></video>
               <div class="instagram-card__badge" aria-hidden="true">
                 <svg class="instagram-card__badge-icon" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                 <span class="instagram-card__badge-text">REELS</span>
@@ -469,9 +471,9 @@
               <div class="instagram-card__overlay"></div>
             </div>
 
-            <!-- FOTO DETALHE: 1.jpg (Corte e acabamento) -->
+            <!-- FOTO DETALHE: 1.webp (Corte e acabamento) -->
             <div class="instagram-card instagram-card--portrait" data-id="ig-9" tabindex="0">
-              <img src="assets/images/insta/1.jpg" alt="Detalhe de acabamento e barba" class="instagram-card__media" loading="lazy">
+              <img src="assets/images/insta/1.webp" alt="Detalhe de acabamento e barba" class="instagram-card__media" loading="lazy" decoding="async" width="400" height="500">
               <div class="instagram-card__overlay"></div>
             </div>
           </div>
@@ -480,9 +482,7 @@
           <div class="instagram-col">
             <!-- VÍDEO PRINCIPAL: 5.mp4 (Barbeiro trabalhando — Reels 9:16) -->
             <div class="instagram-card instagram-card--reel instagram-card--featured" data-id="ig-3" tabindex="0">
-              <video class="instagram-card__media" autoplay muted loop playsinline preload="metadata">
-                <source src="assets/images/insta/5.mp4" type="video/mp4">
-              </video>
+              <video class="instagram-card__media lazy-video" data-src="assets/images/insta/5.mp4" poster="assets/images/insta/poster-5.webp" muted loop playsinline preload="none" aria-label="Barbeiro trabalhando na Hollywood WG Barbearia"></video>
               <div class="instagram-card__badge" aria-hidden="true">
                 <svg class="instagram-card__badge-icon" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                 <span class="instagram-card__badge-text">REELS</span>
@@ -490,17 +490,15 @@
               <div class="instagram-card__overlay"></div>
             </div>
 
-            <!-- EQUIPE + CLIENTE: 14.jpg (Atendimento e ambiente) -->
+            <!-- EQUIPE + CLIENTE: 14.webp (Atendimento e ambiente) -->
             <div class="instagram-card instagram-card--portrait" data-id="ig-4" tabindex="0">
-              <img src="assets/images/insta/14.jpg" alt="Equipe e cliente na Hollywood WG Barbearia" class="instagram-card__media" loading="lazy">
+              <img src="assets/images/insta/14.webp" alt="Equipe e cliente na Hollywood WG Barbearia" class="instagram-card__media" loading="lazy" decoding="async" width="400" height="500">
               <div class="instagram-card__overlay"></div>
             </div>
 
             <!-- VÍDEO DETALHE: 9.mp4 (Fade e técnica — Reels 9:16) -->
             <div class="instagram-card instagram-card--reel" data-id="ig-10" tabindex="0">
-              <video class="instagram-card__media" autoplay muted loop playsinline preload="metadata">
-                <source src="assets/images/insta/9.mp4" type="video/mp4">
-              </video>
+              <video class="instagram-card__media lazy-video" data-src="assets/images/insta/9.mp4" poster="assets/images/insta/poster-9.webp" muted loop playsinline preload="none" aria-label="Fade e técnica de corte"></video>
               <div class="instagram-card__badge" aria-hidden="true">
                 <svg class="instagram-card__badge-icon" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                 <span class="instagram-card__badge-text">REELS</span>
@@ -511,23 +509,21 @@
 
           <!-- Column 03 (Offset) -->
           <div class="instagram-col">
-            <!-- BARBEIRO + CLIENTE: 2.jpg (Conexão humana) -->
+            <!-- BARBEIRO + CLIENTE: 2.webp (Conexão humana) -->
             <div class="instagram-card instagram-card--portrait" data-id="ig-5" tabindex="0">
-              <img src="assets/images/insta/2.jpg" alt="Atendimento personalizado na cadeira" class="instagram-card__media" loading="lazy">
+              <img src="assets/images/insta/2.webp" alt="Atendimento personalizado na cadeira" class="instagram-card__media" loading="lazy" decoding="async" width="400" height="500">
               <div class="instagram-card__overlay"></div>
             </div>
 
             <!-- FOTO DE EQUIPE: 15.webp (Personalidade da marca) -->
             <div class="instagram-card instagram-card--portrait" data-id="ig-6" tabindex="0">
-              <img src="assets/images/insta/15.webp" alt="Equipe de mestres da Hollywood WG Barbearia" class="instagram-card__media" loading="lazy">
+              <img src="assets/images/insta/15.webp" alt="Equipe de mestres da Hollywood WG Barbearia" class="instagram-card__media" loading="lazy" decoding="async" width="400" height="500">
               <div class="instagram-card__overlay"></div>
             </div>
 
             <!-- VÍDEO FINALIZAÇÃO: 10.mp4 (Precisão de navalha — Reels 9:16) -->
             <div class="instagram-card instagram-card--reel" data-id="ig-11" tabindex="0">
-              <video class="instagram-card__media" autoplay muted loop playsinline preload="metadata">
-                <source src="assets/images/insta/10.mp4" type="video/mp4">
-              </video>
+              <video class="instagram-card__media lazy-video" data-src="assets/images/insta/10.mp4" poster="assets/images/insta/poster-10.webp" muted loop playsinline preload="none" aria-label="Precisão de navalha e acabamento"></video>
               <div class="instagram-card__badge" aria-hidden="true">
                 <svg class="instagram-card__badge-icon" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                 <span class="instagram-card__badge-text">REELS</span>
@@ -538,21 +534,21 @@
 
           <!-- Column 04 (Offset Direita / Inferior) -->
           <div class="instagram-col">
-            <!-- RESULTADO DE CORTE: 7.jpg (Precisão e estilo) -->
+            <!-- RESULTADO DE CORTE: 7.webp (Precisão e estilo) -->
             <div class="instagram-card instagram-card--portrait" data-id="ig-7" tabindex="0">
-              <img src="assets/images/insta/7.jpg" alt="Acabamento e resultado de corte de alta precisão" class="instagram-card__media" loading="lazy">
+              <img src="assets/images/insta/7.webp" alt="Acabamento e resultado de corte de alta precisão" class="instagram-card__media" loading="lazy" decoding="async" width="400" height="500">
               <div class="instagram-card__overlay"></div>
             </div>
 
-            <!-- CLIENTE / RESULTADO: 4.jpg (Estilo e satisfação) -->
+            <!-- CLIENTE / RESULTADO: 4.webp (Estilo e satisfação) -->
             <div class="instagram-card instagram-card--portrait" data-id="ig-8" tabindex="0">
-              <img src="assets/images/insta/4.jpg" alt="Estilo e disciplina — Hollywood WG Barbearia" class="instagram-card__media" loading="lazy">
+              <img src="assets/images/insta/4.webp" alt="Estilo e disciplina — Hollywood WG Barbearia" class="instagram-card__media" loading="lazy" decoding="async" width="400" height="500">
               <div class="instagram-card__overlay"></div>
             </div>
 
-            <!-- FOTO DETALHE: 8.jpg (Textura e finalização) -->
+            <!-- FOTO DETALHE: 8.webp (Textura e finalização) -->
             <div class="instagram-card instagram-card--portrait" data-id="ig-12" tabindex="0">
-              <img src="assets/images/insta/8.jpg" alt="Detalhes de textura e alinhamento" class="instagram-card__media" loading="lazy">
+              <img src="assets/images/insta/8.webp" alt="Detalhes de textura e alinhamento" class="instagram-card__media" loading="lazy" decoding="async" width="400" height="500">
               <div class="instagram-card__overlay"></div>
             </div>
           </div>
@@ -562,7 +558,7 @@
         <!-- Central Instagram Follow CTA Button -->
         <div class="instagram-cta-wrap">
           <a href="https://www.instagram.com/hollywood_wg_barbearia/" target="_blank" rel="noopener noreferrer" class="btn-instagram">
-            <img src="assets/images/instagram-gold.jpg" alt="Instagram Hollywood WG" class="btn-instagram__icon" loading="lazy">
+            <img src="assets/images/instagram-gold.webp" alt="Instagram Hollywood WG" class="btn-instagram__icon" loading="lazy" decoding="async" width="44" height="44">
             <span>SEGUIR NO INSTAGRAM</span>
           </a>
         </div>
@@ -595,14 +591,17 @@
             <div class="product-card" data-product-id="prod-1" tabindex="0">
               <div class="product-card__stage">
                 <div class="product-card__frame" aria-hidden="true">
-                  <img src="assets/images/team-frame.svg" alt="" class="product-card__frame-svg">
+                  <img src="assets/images/team-frame.svg" alt="" class="product-card__frame-svg" width="228" height="359">
                 </div>
                 <div class="product-card__img-wrap">
                   <img 
-                    src="assets/images/products/minoxidil-kirkland-60ml.png" 
+                    src="assets/images/products/minoxidil-kirkland-60ml.webp" 
                     alt="Minoxidil 5% Kirkland 60ml — 1 Mês" 
                     class="product-card__img"
                     loading="lazy"
+                    decoding="async"
+                    width="400"
+                    height="400"
                   >
                 </div>
               </div>
@@ -628,7 +627,7 @@
             <div class="product-card" data-product-id="prod-2" tabindex="0">
               <div class="product-card__stage">
                 <div class="product-card__frame" aria-hidden="true">
-                  <img src="assets/images/team-frame.svg" alt="" class="product-card__frame-svg">
+                  <img src="assets/images/team-frame.svg" alt="" class="product-card__frame-svg" width="228" height="359">
                 </div>
                 <div class="product-card__placeholder">
                   <svg class="product-card__placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -652,7 +651,7 @@
             <div class="product-card" data-product-id="prod-3" tabindex="0">
               <div class="product-card__stage">
                 <div class="product-card__frame" aria-hidden="true">
-                  <img src="assets/images/team-frame.svg" alt="" class="product-card__frame-svg">
+                  <img src="assets/images/team-frame.svg" alt="" class="product-card__frame-svg" width="228" height="359">
                 </div>
                 <div class="product-card__placeholder">
                   <svg class="product-card__placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -678,13 +677,13 @@
         <!-- Discrete Navigation Counter & Arrows -->
         <div class="products-nav">
           <button type="button" class="products-nav__btn" id="prod-prev" aria-label="Produto anterior">
-            <img src="assets/images/button-prev.svg" alt="">
+            <img src="assets/images/button-prev.svg" alt="" width="52" height="52">
           </button>
           <span class="products-nav__counter">
             <span class="products-nav__current" id="prod-counter-current">01</span> / <span id="prod-counter-total">03</span>
           </span>
           <button type="button" class="products-nav__btn" id="prod-next" aria-label="Próximo produto">
-            <img src="assets/images/button-next.svg" alt="">
+            <img src="assets/images/button-next.svg" alt="" width="52" height="52">
           </button>
         </div>
 
@@ -703,7 +702,7 @@
           <div class="location-info">
             
             <div class="location-header">
-              <img src="assets/images/location.svg" alt="" aria-hidden="true" class="location-header__icon">
+              <img src="assets/images/location.svg" alt="" aria-hidden="true" class="location-header__icon" width="38" height="38">
               <div class="location-header__eyebrow">
                 <span class="location-header__eyebrow-line" aria-hidden="true"></span>
                 <span>VISITE-NOS</span>
@@ -785,10 +784,13 @@
                 aria-label="Clique no mapa para carregar o mapa interativo"
               >
                 <img 
-                  src="assets/images/map-dark.jpg" 
+                  src="assets/images/map-dark.webp" 
                   alt="Mapa estilizado da localização da Hollywood WG Barbearia em Itabuna, Bahia" 
                   class="location-map-img"
                   loading="lazy"
+                  decoding="async"
+                  width="700"
+                  height="450"
                 >
                 <div class="location-map-vignette" aria-hidden="true"></div>
               </div>
@@ -839,7 +841,7 @@
         <!-- Column 1: Brand Anchor -->
         <div class="footer-col footer-col--brand">
           <a href="#inicio" class="footer-brand" aria-label="Hollywood WG Barbearia - Início">
-            <img src="assets/images/logo.png" alt="Hollywood WG Barbearia" class="footer-brand__logo">
+            <img src="assets/images/logo.webp" alt="Hollywood WG Barbearia" class="footer-brand__logo" width="160" height="50" loading="lazy" decoding="async">
           </a>
           <div class="footer-brand__tagline">
             <span class="footer-brand__name">HOLLYWOOD WG BARBEARIA</span>
@@ -918,7 +920,7 @@
         <a href="https://marzcreativedesign.com" target="_blank" rel="noopener noreferrer" class="footer-credit" aria-label="Desenvolvido por Rafael Setubal — Marz Creative Design">
           <span class="footer-credit__label">DESENVOLVIDO POR</span>
           <span class="footer-credit__name">RAFAEL SETUBAL</span>
-          <img src="assets/images/rafael-setubal.png" alt="Rafael Setubal Logo" class="footer-credit__logo">
+          <img src="assets/images/rafael-setubal.webp" alt="Rafael Setubal Logo" class="footer-credit__logo" width="80" height="20" loading="lazy" decoding="async">
         </a>
       </div>
 
@@ -959,8 +961,8 @@
         <!-- Israel Souza (Rael Barber) -->
         <div class="booking-barber-item">
           <div class="booking-barber-item__visual">
-            <img src="assets/images/team-frame.svg" alt="" aria-hidden="true" class="booking-barber-item__frame">
-            <img src="assets/images/barbers/rael.png" alt="Israel Souza (Rael)" class="booking-barber-item__photo">
+            <img src="assets/images/team-frame.svg" alt="" aria-hidden="true" class="booking-barber-item__frame" width="228" height="359">
+            <img src="assets/images/barbers/rael.webp" alt="Israel Souza (Rael)" class="booking-barber-item__photo" loading="lazy" decoding="async" width="180" height="200">
           </div>
           <div class="booking-barber-item__info">
             <span class="booking-barber-item__index">01</span>
@@ -980,8 +982,8 @@
         <!-- Gaguinho Do Corte -->
         <div class="booking-barber-item">
           <div class="booking-barber-item__visual">
-            <img src="assets/images/team-frame.svg" alt="" aria-hidden="true" class="booking-barber-item__frame">
-            <img src="assets/images/barbers/gago.png" alt="Gaguinho Do Corte" class="booking-barber-item__photo">
+            <img src="assets/images/team-frame.svg" alt="" aria-hidden="true" class="booking-barber-item__frame" width="228" height="359">
+            <img src="assets/images/barbers/gago.webp" alt="Gaguinho Do Corte" class="booking-barber-item__photo" loading="lazy" decoding="async" width="180" height="200">
           </div>
           <div class="booking-barber-item__info">
             <span class="booking-barber-item__index">02</span>
@@ -1005,8 +1007,6 @@
     </div>
   </div>
 
-  <!-- Scripts: Leaflet Free Map Engine & Main Bundle -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script type="module" src="./js/main.js"></script>
 </body>
 </html>

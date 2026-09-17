@@ -5,7 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   /* ==================================================
-     00. CINEMATIC BRAND PRELOADER
+     00. CINEMATIC BRAND PRELOADER (HIGH PERFORMANCE)
      ================================================== */
   const preloader = document.getElementById('preloader');
   if (preloader) {
@@ -13,10 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
       preloader.classList.add('is-loaded');
       setTimeout(() => {
         preloader.style.display = 'none';
-      }, 900);
+      }, 500);
     };
 
-    setTimeout(dismissPreloader, 1600);
+    if (document.readyState === 'complete') {
+      setTimeout(dismissPreloader, 250);
+    } else {
+      window.addEventListener('load', () => setTimeout(dismissPreloader, 250));
+    }
   }
 
   /* ==================================================
@@ -206,26 +210,44 @@ document.addEventListener('DOMContentLoaded', () => {
     ]
   };
 
-  // Performance Optimization: Play videos only when in viewport
+  // Performance Optimization: Lazy load video src and play only when in viewport
   const igVideos = document.querySelectorAll('.instagram-card video');
-  if ('IntersectionObserver' in window && igVideos.length > 0) {
-    const videoObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const video = entry.target;
-        if (entry.isIntersecting) {
-          const playPromise = video.play();
-          if (playPromise !== undefined) {
-            playPromise.catch(() => {
-              // Autoplay policy fallback
-            });
+  if (igVideos.length > 0) {
+    if ('IntersectionObserver' in window) {
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const video = entry.target;
+          if (entry.isIntersecting) {
+            if (!video.src && video.dataset.src) {
+              video.src = video.dataset.src;
+              video.load();
+            }
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+              playPromise.catch(() => {
+                // Autoplay policy fallback
+              });
+            }
+          } else {
+            if (video.src && !video.paused) {
+              video.pause();
+            }
           }
-        } else {
-          video.pause();
+        });
+      }, {
+        rootMargin: '200px 0px 200px 0px',
+        threshold: 0.1
+      });
+
+      igVideos.forEach(video => videoObserver.observe(video));
+    } else {
+      igVideos.forEach(video => {
+        if (video.dataset.src) {
+          video.src = video.dataset.src;
+          video.play().catch(() => {});
         }
       });
-    }, { threshold: 0.25 });
-
-    igVideos.forEach(video => videoObserver.observe(video));
+    }
   }
 
   /* ==================================================
@@ -236,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 'prod-1',
       name: 'MINOXIDIL 5% (60ML)',
       price: 'R$ 50,00',
-      image: 'assets/images/products/minoxidil-kirkland-60ml.png',
+      image: 'assets/images/products/minoxidil-kirkland-60ml.webp',
       alt: 'Minoxidil 5% Kirkland 60ml — 1 Mês',
       status: 'available',
       whatsappMessage: 'Olá! Tenho interesse em comprar o Minoxidil 5% Kirkland (60ml) por R$ 50,00 na Hollywood WG Barbearia. Ainda está disponível?'
@@ -334,13 +356,41 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==================================================
-     06. LOCATION MAP LIVE INTERACTIVE (LEAFLET + CARTO DARK)
+     06. LOCATION MAP LIVE INTERACTIVE (ON-DEMAND LEAFLET)
      ================================================== */
   const locationMapContainer = document.getElementById('location-map-container');
   const locationMapStatic = document.getElementById('location-map-static');
   const locationMapInteractive = document.getElementById('location-map-interactive');
   const locationMapClose = document.getElementById('location-map-close');
   let leafletMapInstance = null;
+  let isLeafletLoading = false;
+
+  const loadLeafletAssets = (callback) => {
+    if (typeof L !== 'undefined') {
+      if (callback) callback();
+      return;
+    }
+    if (isLeafletLoading) return;
+    isLeafletLoading = true;
+
+    // Inject stylesheet
+    if (!document.querySelector('link[href*="leaflet"]')) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+      document.head.appendChild(link);
+    }
+
+    // Inject script
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.async = true;
+    script.onload = () => {
+      isLeafletLoading = false;
+      if (callback) callback();
+    };
+    document.body.appendChild(script);
+  };
 
   if (locationMapContainer && locationMapStatic) {
     const initLeafletMap = () => {
@@ -392,12 +442,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (locationMapInteractive) {
         locationMapInteractive.setAttribute('aria-hidden', 'false');
       }
-      initLeafletMap();
-      if (leafletMapInstance) {
-        setTimeout(() => {
-          leafletMapInstance.invalidateSize();
-        }, 150);
-      }
+      loadLeafletAssets(() => {
+        initLeafletMap();
+        if (leafletMapInstance) {
+          setTimeout(() => {
+            leafletMapInstance.invalidateSize();
+          }, 150);
+        }
+      });
     };
 
     const deactivateInteractiveMap = () => {
@@ -420,6 +472,20 @@ document.addEventListener('DOMContentLoaded', () => {
         e.stopPropagation();
         deactivateInteractiveMap();
       });
+    }
+
+    // Pre-fetch Leaflet on viewport approach for instant responsiveness
+    const locationSec = document.getElementById('unidade');
+    if (locationSec && 'IntersectionObserver' in window) {
+      const mapPrefetchObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            loadLeafletAssets();
+            mapPrefetchObserver.unobserve(locationSec);
+          }
+        });
+      }, { rootMargin: '300px 0px' });
+      mapPrefetchObserver.observe(locationSec);
     }
   }
 
