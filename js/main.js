@@ -583,7 +583,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Close modal after selecting a barber
-    const barberLinks = bookingModal.querySelectorAll('.booking-barber-card');
+    const barberLinks = bookingModal.querySelectorAll('.booking-barber-item__btn, a[href*="wa.me"]');
     barberLinks.forEach(link => {
       link.addEventListener('click', () => {
         setTimeout(closeModal, 300);
