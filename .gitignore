@@ -1,9 +1,10 @@
-# OS files
+﻿# OS files
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# Node / Editor
+# Node / Build / Editor
 node_modules/
+dist/
 .vscode/
 .idea/
