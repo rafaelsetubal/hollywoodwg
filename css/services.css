@@ -18,6 +18,10 @@
 
 /* Header with Official Scissors Asset */
 .services-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
   margin-bottom: var(--space-48);
   max-width: 800px;
 }

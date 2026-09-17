@@ -556,7 +556,8 @@
    Sequence: Transparência / Blur -> Dourado/Amarelo -> Cor Oficial
    ================================================== */
 .reveal-text {
-  display: inline-block;
+  display: block;
+  width: 100%;
   overflow: visible;
 }
 

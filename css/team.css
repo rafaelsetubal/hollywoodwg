@@ -36,8 +36,11 @@
 
 /* Section Header (Mustache above title, no scissors) */
 .team-header {
-  margin-bottom: var(--space-48);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   text-align: left;
+  margin-bottom: var(--space-48);
 }
 
 .team-header__mustache-icon {
