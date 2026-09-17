@@ -37,8 +37,11 @@
 }
 
 .instagram-header__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-12);
   font-family: var(--font-mono);
-  font-size: var(--fs-micro);
+  font-size: var(--fs-eyebrow);
   font-weight: 700;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -46,24 +49,33 @@
   margin-bottom: var(--space-8);
 }
 
+.instagram-header__eyebrow-line {
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background-color: var(--gold);
+}
+
 .instagram-header__title {
   font-family: var(--font-headline);
-  font-size: clamp(2.5rem, 6vw, 4.25rem);
-  line-height: 0.95;
-  letter-spacing: 0.04em;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: var(--fw-regular);
+  line-height: 0.92;
+  letter-spacing: 0.02em;
   color: var(--white);
   text-transform: uppercase;
-  margin-bottom: var(--space-16);
+  margin: 0 0 10px 0;
 }
 
 .instagram-header__subtitle {
   font-family: var(--font-mono);
   font-size: 0.8125rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(233, 229, 220, 0.72);
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.5;
 }
 
 /* --- Editorial Mosaic Grid --- */

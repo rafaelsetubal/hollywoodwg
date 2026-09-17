@@ -18,7 +18,7 @@
 
 /* Header with Official Scissors Asset */
 .services-header {
-  margin-bottom: var(--space-64);
+  margin-bottom: var(--space-48);
   max-width: 800px;
 }
 
@@ -36,21 +36,39 @@
   gap: var(--space-12);
   font-family: var(--font-mono);
   font-size: var(--fs-eyebrow);
-  letter-spacing: 0.22em;
+  font-weight: 700;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--gold-dark);
   margin-bottom: var(--space-8);
 }
 
+.services-header__eyebrow-line {
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background-color: var(--gold-dark);
+}
+
 .services-header__title {
   font-family: var(--font-headline);
-  font-size: clamp(3.75rem, 8vw, 6.5rem);
+  font-size: clamp(3rem, 7vw, 5.5rem);
   font-weight: var(--fw-regular);
-  line-height: 0.88;
+  line-height: 0.92;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--black);
+  margin: 0 0 10px 0;
+}
+
+.services-header__subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(20, 20, 20, 0.72);
   margin: 0;
+  line-height: 1.5;
 }
 
 /* Asymmetrical Layout (58% list left / 42% photo right) */

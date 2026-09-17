@@ -54,7 +54,8 @@
   gap: var(--space-12);
   font-family: var(--font-mono);
   font-size: var(--fs-eyebrow);
-  letter-spacing: 0.22em;
+  font-weight: 700;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: var(--space-8);
@@ -69,13 +70,23 @@
 
 .team-header__title {
   font-family: var(--font-headline);
-  font-size: clamp(3.75rem, 8vw, 6.5rem);
+  font-size: clamp(3rem, 7vw, 5.5rem);
   font-weight: var(--fw-regular);
-  line-height: 0.88;
+  line-height: 0.92;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--white);
+  margin: 0 0 10px 0;
+}
+
+.team-header__subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(233, 229, 220, 0.72);
   margin: 0;
+  line-height: 1.5;
 }
 
 /* ==================================================

@@ -437,10 +437,15 @@ document.addEventListener('DOMContentLoaded', () => {
      ================================================== */
   const titleSelectors = [
     '.services-header__title',
+    '.services-header__subtitle',
     '.team-header__title',
+    '.team-header__subtitle',
     '.instagram-header__title',
+    '.instagram-header__subtitle',
     '.products-header__title',
+    '.products-header__subtitle',
     '.location-header__title',
+    '.location-header__subtitle',
     '.hero-subtitle',
     '.hero-description'
   ];

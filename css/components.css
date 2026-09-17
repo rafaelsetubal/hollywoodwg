@@ -286,29 +286,31 @@
   font-weight: 800 !important;
 }
 
-/* --- Eyebrow Component --- */
-.eyebrow {
+/* --- Standardized Eyebrow Component --- */
+.eyebrow,
+.hero-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: var(--space-12);
-  font-family: var(--font-body);
+  font-family: var(--font-mono);
   font-size: var(--fs-eyebrow);
-  font-weight: var(--fw-semibold);
-  letter-spacing: 0.22em;
+  font-weight: 700;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--off-white);
+  color: var(--gold);
   margin-bottom: var(--space-16);
 }
 
-.eyebrow__line {
+.eyebrow__line,
+.hero-eyebrow__line {
   display: inline-block;
-  width: 24px;
+  width: 28px;
   height: 1px;
   background-color: var(--gold);
 }
 
 .eyebrow__text {
-  color: var(--off-white);
+  color: var(--gold);
 }
 
 /* ==================================================
