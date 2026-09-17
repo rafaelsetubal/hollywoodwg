@@ -711,12 +711,12 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 600px;
-  background: #0C0C0C;
+  max-width: 760px;
+  background: #0A0A0A;
   border: 1px solid rgba(212, 175, 55, 0.35);
   border-radius: 4px;
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.95), 0 0 36px rgba(212, 175, 55, 0.15);
-  padding: 36px 32px 28px 32px;
+  padding: 32px 28px 24px 28px;
   transform: translateY(24px) scale(0.96);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
@@ -729,10 +729,10 @@
 
 .booking-modal__close {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 36px;
-  height: 36px;
+  top: 14px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: #F5F5F5;
@@ -754,7 +754,7 @@
 
 .booking-modal__header {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .booking-modal__eyebrow {
@@ -764,34 +764,35 @@
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .booking-modal__title {
   font-family: var(--font-headline);
-  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-size: clamp(1.85rem, 5vw, 2.5rem);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #FFFFFF;
-  margin: 0 0 6px 0;
+  margin: 0 0 4px 0;
   line-height: 1;
 }
 
 .booking-modal__subtitle {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.6);
   margin: 0;
 }
 
-/* Barber Selection Grid (Open & Editorial, No nested cards) */
+/* Barber Selection Grid (2-4 Barbers Side-by-Side) */
 .booking-barbers-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  margin-bottom: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin-bottom: 20px;
+  justify-content: center;
 }
 
 .booking-barber-item {
@@ -803,37 +804,38 @@
   border: none;
   padding: 0;
   position: relative;
+  width: 100%;
 }
 
 /* Avatar Visual matching the Team Section */
 .booking-barber-item__visual {
   position: relative;
   width: 100%;
-  max-width: 220px;
-  height: 240px;
+  max-width: 180px;
+  height: 200px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .booking-barber-item__frame {
   position: absolute;
-  top: 15%;
+  top: 12%;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
-  height: 80%;
+  height: 82%;
   object-fit: contain;
   opacity: 0.85;
-  filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.25));
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.22));
   transition: all 0.35s ease;
   pointer-events: none;
 }
 
 .booking-barber-item:hover .booking-barber-item__frame {
   opacity: 1;
-  filter: drop-shadow(0 0 18px rgba(212, 175, 55, 0.5));
+  filter: drop-shadow(0 0 16px rgba(212, 175, 55, 0.5));
 }
 
 .booking-barber-item__photo {
@@ -857,57 +859,58 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .booking-barber-item__index {
   font-family: var(--font-mono);
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   color: var(--gold);
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .booking-barber-item__name {
   font-family: var(--font-body);
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #FFFFFF;
-  margin: 0 0 4px 0;
+  margin: 0 0 2px 0;
 }
 
 .booking-barber-item__handle {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
   color: rgba(255, 255, 255, 0.5);
 }
 
 .booking-barber-item__btn {
   width: 100%;
-  max-width: 240px;
-  padding: 12px 20px !important;
-  font-size: 0.8125rem !important;
+  max-width: 220px;
+  padding: 11px 16px !important;
+  font-size: 0.75rem !important;
+  white-space: nowrap !important;
 }
 
 .booking-modal__footer {
   text-align: center;
-  padding-top: 16px;
+  padding-top: 14px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .booking-modal__note {
   font-family: var(--font-mono);
-  font-size: 0.6875rem;
+  font-size: 0.625rem;
   letter-spacing: 0.1em;
   color: rgba(255, 255, 255, 0.4);
   text-transform: uppercase;
 }
 
-/* Mobile Bottom Sheet Adaptation */
+/* Mobile Side-by-Side Fit (Both Barbers Visible Simultaneously) */
 @media (max-width: 640px) {
   .booking-modal {
     padding: 0;
@@ -916,9 +919,9 @@
 
   .booking-modal__sheet {
     max-width: 100%;
-    max-height: 90vh;
+    max-height: 92vh;
     border-radius: 16px 16px 0 0;
-    padding: 28px 20px 24px 20px;
+    padding: 22px 14px 18px 14px;
     transform: translateY(100%);
     overflow-y: auto;
   }
@@ -927,29 +930,61 @@
     transform: translateY(0);
   }
 
+  .booking-modal__header {
+    margin-bottom: 14px;
+  }
+
+  .booking-modal__title {
+    font-size: 1.5rem;
+  }
+
+  .booking-modal__subtitle {
+    font-size: 0.5625rem;
+  }
+
+  /* Keep 2 columns side-by-side so nobody is hidden! */
   .booking-barbers-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px;
+    margin-bottom: 14px;
   }
 
   .booking-barber-item {
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  }
-
-  .booking-barber-item:last-child {
-    border-bottom: none;
     padding-bottom: 0;
+    border-bottom: none;
   }
 
   .booking-barber-item__visual {
-    height: 190px;
-    max-width: 180px;
-    margin-bottom: 12px;
+    height: 135px;
+    max-width: 130px;
+    margin-bottom: 8px;
+  }
+
+  .booking-barber-item__info {
+    margin-bottom: 8px;
+  }
+
+  .booking-barber-item__index {
+    font-size: 0.6875rem;
+  }
+
+  .booking-barber-item__name {
+    font-size: 0.75rem;
+  }
+
+  .booking-barber-item__handle {
+    font-size: 0.5625rem;
   }
 
   .booking-barber-item__btn {
+    padding: 9px 6px !important;
+    font-size: 0.625rem !important;
+    gap: 4px;
     max-width: 100%;
+  }
+
+  .booking-barber-item__btn span {
+    font-size: 0.625rem !important;
   }
 }
 
