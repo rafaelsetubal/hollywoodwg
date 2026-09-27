@@ -1,19 +1,20 @@
-# hollywoodwg
+ï»¿# Hollywood WG Barbearia
 
-**Hollywood WG Barbearia** — Tradição no corte. Respeito na cadeira.
-Experiência premium de barbearia clássica e contemporânea em Itabuna - BA.
+**Hollywood WG Barbearia** - TradiÃ§Ã£o no corte. Respeito na cadeira.
+ExperiÃªncia premium de barbearia clÃ¡ssica e contemporÃ¢nea em Itabuna - BA.
 
-## ?? Tecnologias
-- HTML5 Semântico com microdados Schema.org (LocalBusiness / BarberShop)
-- CSS3 Moderno (Design Tokens, Grid, Flexbox, Animações Cinemáticas)
-- JavaScript Vanilla (Preloader, Scrollspy, Leaflet Maps, Word Entrance Reveal, Modal Direct Booking)
+## Tecnologias
+- HTML5 SemÃ¢ntico com microdados Schema.org (LocalBusiness / BarberShop e FAQPage)
+- CSS3 Moderno (Design Tokens, Grid, Flexbox, AnimaÃ§Ãµes CinemÃ¡ticas)
+- JavaScript Vanilla (Preloader, Scrollspy, Leaflet Maps, Modal Direct Booking, FAQ Accordion)
+- Vite + OtimizaÃ§Ãµes de Imagens WebP
 
-## ?? Barbeiros
+## Barbeiros
 - **Israel Souza (Rael Barber)**
 - **Gaguinho Do Corte**
 
-## ?? Localização
-- Rua Nações Unidas, 439 - Centro, Itabuna - BA
+## LocalizaÃ§Ã£o
+- Rua Santa Rita, 255 - Bairro Nossa Senhora de FÃ¡tima, Itabuna - BA
 
 ---
-Desenvolvido por [Rafael Setubal](https://marzcreativedesign.com)
+Desenvolvido por [Rafael Setubal](https://lp.marzcreativedesign.com)
