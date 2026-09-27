@@ -44,32 +44,39 @@ document.addEventListener('DOMContentLoaded', () => {
     handleScroll();
   }
 
-  // Mobile Drawer Toggle
+  // Mobile Dropdown Toggle (Smooth Attached Hamburger)
   if (navToggle && mainNav) {
-    navToggle.addEventListener('click', () => {
+    const closeNav = () => {
+      mainNav.classList.remove('is-open');
+      navToggle.classList.remove('is-active');
+      navToggle.setAttribute('aria-expanded', 'false');
+    };
+
+    navToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       const isOpen = mainNav.classList.toggle('is-open');
       navToggle.classList.toggle('is-active');
       navToggle.setAttribute('aria-expanded', String(isOpen));
-      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         if (mainNav.classList.contains('is-open')) {
-          mainNav.classList.remove('is-open');
-          navToggle.classList.remove('is-active');
-          navToggle.setAttribute('aria-expanded', 'false');
-          document.body.style.overflow = '';
+          closeNav();
         }
       });
     });
 
+    // Close when clicking outside header
+    document.addEventListener('click', (e) => {
+      if (mainNav.classList.contains('is-open') && siteHeader && !siteHeader.contains(e.target)) {
+        closeNav();
+      }
+    });
+
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && mainNav.classList.contains('is-open')) {
-        mainNav.classList.remove('is-open');
-        navToggle.classList.remove('is-active');
-        navToggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
+        closeNav();
       }
     });
   }
@@ -690,5 +697,23 @@ document.addEventListener('DOMContentLoaded', () => {
       window.addEventListener('scroll', checkScroll, { passive: true });
       checkScroll();
     }
+  }
+
+  /* ==================================================
+     12. FAQ ACCORDION EXCLUSIVE EXPANSION
+     ================================================== */
+  const faqItems = document.querySelectorAll('.faq-item');
+  if (faqItems.length > 0) {
+    faqItems.forEach(item => {
+      item.addEventListener('toggle', () => {
+        if (item.open) {
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item && otherItem.open) {
+              otherItem.open = false;
+            }
+          });
+        }
+      });
+    });
   }
 });

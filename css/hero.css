@@ -2,24 +2,26 @@
    HOLLYWOOD WG BARBEARIA — HEADER & HERO FIXED (SOLID BLACK)
    ================================================== */
 
-/* --- Site Header (Pure Solid Black, Zero Border) --- */
+/* --- Site Header (Sticky / Fixed Glass Dark & Gold) --- */
 .site-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 10000;
   padding: 14px 0;
-  background-color: #050505;
-  border-bottom: none;
-  transition: padding var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+  background-color: rgba(5, 5, 5, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.16);
+  transition: padding var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .site-header.is-scrolled {
   padding: 10px 0;
-  background-color: #050505;
-  border-bottom: none;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.85);
+  background-color: rgba(5, 5, 5, 0.98);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.28);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.9);
 }
 
 .site-header__container {
